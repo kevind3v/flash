@@ -1,0 +1,30 @@
+{
+  "name": "kevind3v/flash",
+  "description": "Projeto para cadastro de roupas",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Santos",
+      "email": "kevinsiqueira.dev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    },
+    "files": [
+      "src/Config.php",
+      "src/Support/Helpers.php"
+    ]
+  },
+  "require": {
+    "coffeecode/router": "1.0.*",
+    "coffeecode/datalayer": "1.1.2",
+    "brbunny/brplates": "1.0.*",
+    "brbunny/brmailer": "1.0.*"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "3.*"
+  }
+}
