@@ -4,7 +4,7 @@
  * Constant Url Base of the project, change if necessary
  */
 
-define("ROOT", "http://localhost/teste-php");
+define("ROOT", "http://localhost/flash");
 
 
 /** Constant for database configuration  */

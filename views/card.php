@@ -1,7 +1,7 @@
 <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
     <div class="card-product">
         <div class="product-tumb">
-            <img class="" src="<?= url('uploads/') . $product->image ?>">
+            <img class="" src="<?= url($product->image) ?>">
         </div>
         <div class="card-content pt-1">
             <h4><?= $product->name ?></h4>

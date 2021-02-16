@@ -2,6 +2,7 @@
 
 namespace Src\App;
 
+use BrBunny\BrUploader\Base64;
 use Src\Core\Controller;
 use Src\Models\Product;
 
@@ -53,26 +54,24 @@ class Web extends Controller
             return;
         }
 
-        if ($image = image($data['image'])) {
-            $product = new Product();
-            $product->name = $data['name'];
-            $product->description = $data['description'];
-            $product->price = $data['price'];
-            $product->image = $image;
-
-            if ($product->save()) {
-                $response['message'] = "Produto cadastrado com sucesso";
-                $response['error'] = false;
-                echo json_encode($response);
-                return;
-            } else {
-                removeImage($image);
-            }
+        $product = new Product();
+        $product->name = $data['name'];
+        $product->description = $data['description'];
+        $product->price = $data['price'];
+        $image = (new Base64("uploads", "images"))
+            ->upload($data['image'], $data['name'] . "-" . time());
+        $product->image = $image;
+        if ($product->save()) {
+            $response['message'] = "Produto cadastrado com sucesso";
+            $response['error'] = false;
+            echo json_encode($response);
+            return;
         }
 
         $response['message'] = "Algo deu errado!! Tente novamente!";
         $response['error'] = true;
         echo json_encode($response);
+        return;
     }
 
     /**
@@ -127,17 +126,18 @@ class Web extends Controller
             $product->name = $data['name'];
             $product->description = $data['description'];
             $product->price = $data['price'];
-            if (!empty($data['image']) && $data['image'] !== "#") {
-                if ($image = image($data['image'], $product->image)) {
-                    $product->image = $image;
-                }
+            if (!empty($data['image']) && $data['image'] != "#") {
+                $image = (new Base64("uploads", "images"))
+                    ->upload($data['image'], $data['name'] . "-" . time());
+                Base64::remove($product->image);
+                $product->image = $image;
             }
-            $product->save();
-
-            $response['message'] = "Produto atualizado com sucesso";
-            $response['error'] = false;
-            echo json_encode($response);
-            return;
+            if ($product->save()) {
+                $response['message'] = "Produto atualizado com sucesso";
+                $response['error'] = false;
+                echo json_encode($response);
+                return;
+            }
         }
         $this->view->show("errors/empty");
     }
@@ -152,7 +152,7 @@ class Web extends Controller
             $idProduct = filter_var($data["id"], FILTER_VALIDATE_INT);
             $product = (new Product())->findById($idProduct);
             if ($product) {
-                removeImage($product->image);
+                Base64::remove($product->image);
                 $product->destroy();
             }
             $response["message"] = "Produto excluído com sucesso!";
