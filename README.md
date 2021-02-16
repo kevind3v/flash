@@ -1,23 +1,83 @@
-# Desenvolvimento do projeto
+<p align="center">
+  <a href="https://unform.dev">
+    <img src="./readme/brand.png" width="250" alt="Flash" />
+  </a>
+</p>
 
-O projeto foi desenvolvido utilizando o padrão básico MVC e alguns componentes para auxiliar no desenvolvimento. O primeiro deles é o DataLayer que foi utilizado na camada de Modelo, onde ele provém uma abstração de banco de dados utilizando PDO. O segundo é o Router, onde ele foi utilizado para cuidar do roteamento do projeto tornando as URLs mais amigáveis. Entre outros componentes.
+<p align="center">Flash desenvolvido em PHP 🐘 puro na estrutura MVC</p>
+<p align="center">
 
-# Configuração
+<a href="https://github.com/kevind3v">
+<img alt="Maintainer" src="https://img.shields.io/badge/Criado%20por-@kevind3v-ef4?style=for-the-badge">
+</a>
 
-Para que o projeto possa ser rodado, é necessário criar o banco de dados que está no arquivo db.sql. Após isso, deve-se alterar as constantes de conexão que está no arquivo src/Config.php, alterar a constante de configuração do BRPLATES caso necessário, e por último alterar a constante raiz do projeto, também no arquivo src/Config.php de modo que se alterado, não possua a / no final.
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/kevind3v/flash?color=3a5793&style=for-the-badge">
 
-# Iniciar Projeto
+<img alt="Repository size" src="https://img.shields.io/github/repo-size/kevind3v/flash?color=ef4444&style=for-the-badge">
 
-Instalar componentes composer:
+<a href="https://github.com/kevind3v/blog/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/kevind3v/flash?style=for-the-badge">
+  </a>
+</p>
 
-```sh
-> composer install
+### 💻 Sobre o projeto
+
+🐘 Flash - é um projeto desenvolvido em PHP (MVC), para cadastro de roupas.
+
+### 🎨 Layout
+
+Alguns prints do projeto:
+
+![print1](readme/print01.png)
+![print2](readme/print02.png)
+![print3](readme/print03.png)
+![print4](readme/print04.png)
+
+### 🎲 Iniciar Projeto
+
+```bash
+# Instalar dependências composer
+$ composer install
+
+# Instalar as dependências package.json
+$ yarn install
 ```
 
-Instalar packages:
+### 🛠 Tecnologias
 
-```sh
-> npm install
-# ou
-> yarn install
-```
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [PHP](https://www.php.net/)
+- [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+- [Jquery](https://jquery.com/)
+- [Node.js](https://nodejs.org/en/)
+
+### ⭐️ Autor
+
+<p align="center">
+<a href="https://github.com/kevind3v/">
+ <img style="border-radius: 50%;" src="https://github.com/kevind3v.png" width="100px;" alt=""/>
+</a>
+ <br />
+ <b>Kevin Siqueira 🐘</b>
+</p>
+
+<p align="center">
+
+<a href="mailto:kevinsiqueira.dev@gmail.com" alt="E-mail" target="_blank">
+    <img src="https://img.shields.io/badge/-Gmail-c14438?style=for-the-badge&logo=Gmail&logoColor=white" />
+</a>
+
+<a href="https://www.linkedin.com/in/kevinssiqueira/" alt="LinkedIn" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-blue?style=for-the-badge&logo=Linkedin&logoColor=white" />
+</a>
+
+<a href="https://www.instagram.com/kevind3v/" alt="Instagram" target="_blank">
+    <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=Instagram&logoColor=white" />
+</a>
+
+<a href="https://kevinsiqueira.vercel.app" alt="Instagram" target="_blank">
+    <img src="https://img.shields.io/badge/-portf%C3%B3lio-black?style=for-the-badge&logo=vercel&logoColor=white" />
+</a>
+
+</p>
